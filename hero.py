@@ -1,4 +1,9 @@
-
+'''
+Name: Daniel Puerto & Jacob Miranda
+Date: 4/8/2026
+Group: 12
+Description: Creates & initializes the hero class and creates the functions as to how the Hero moves
+'''
 import maze
 
 class Hero():
