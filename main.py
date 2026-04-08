@@ -16,15 +16,15 @@ def main():
     minotaur = minotaur.Minotaur()
     hero = hero.Hero()
 
-    #Game Loop
+    #Game Loop 
     while True:
         #Displays the Maze
         print(maze)
 
-        #User input
+        #User input to know how the Hero is going to move
         move = input("Move (w/a/s/d):).lower()
 
-        #Move Hero
+        #Moves Hero 
         if move == 'w':
             result = hero.go_up()
         elif move == 's':
