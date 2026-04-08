@@ -9,6 +9,7 @@ class Maze():
     _instance = None
     _initialized = False
 
+    
     def __new__(cls, *args):
         if cls._instance is None:
             cls._instance = super(Maze, cls).__new__(cls)
