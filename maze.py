@@ -1,4 +1,9 @@
-
+'''
+Name: Daniel Puerto & Jacob Miranda
+Date: 4/8/2026
+Group: 12
+Description: Creates the maze class. Initializes the maze function. 
+'''
 
 class Maze():
     _instance = None
