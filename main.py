@@ -1,4 +1,10 @@
-
+'''
+Name: Daniel Puerto & Jacob Miranda
+Date: 4/8/2026
+Group:12
+Description: Creates the object of the maze, hero and minotaur. Creates the user input to dictate how the hero moves. Checks the result for whether the
+hero finishes the maze, gets caught by the minotaur, is caught by the minotaur 
+'''
 
 import maze
 import minotaur
