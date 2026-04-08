@@ -21,6 +21,7 @@ class Hero():
     
     
     def go_up(self):
+        #Hero moves up
         new_row = self.pos[0] - 1
         new_col = self.pos[1] 
 
@@ -35,6 +36,7 @@ class Hero():
 
     
     def go_down(self):
+        #Hero goes down
         new_row = self.pos[0] + 1
         new_col = self.pos[1] 
 
@@ -48,6 +50,7 @@ class Hero():
             return current_obj
 
     def go_left(self):
+        #Hero goes left
         new_row = self.pos[0] 
         new_col = self.pos[1] - 1
 
@@ -62,6 +65,7 @@ class Hero():
     
     
     def go_right(self):
+        #Hero goes right
 
         new_row = self.pos[0]
         new_col = self.pos[1] + 1
