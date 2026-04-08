@@ -4,18 +4,87 @@ import maze
 class Hero():
     
     def __init__(self):
-        new_maze = maze.Maze()
-        self.pos = new_maze.search_maze('s')
-        new_maze[self.pos[0]][self.pos[1]] = 'H'
+        self.maze = Maze()
+
+        #Finding the starting position 's'
+        start = self.maze.search_maze('s')
+        self.row = start[0]
+        self.col = start[1]
+        
+        #placing the hero
+        self.maze[self.row][self.col] = 'H'
         
     
     
     def go_up(self):
-        pass
+        new_row = self.row - 1
+        new_col = self.col
+
+        #Find bounds
+        if new_row < 0:
+            return '*'
+
+        target = self.maze[new_row][new_col]
+
+        if target == '*':
+            return '*'
+        #Moves Hero
+        self.maze[self.row][self.col] = ''
+        self.row = new_row
+        self.col = new_col
+        self.maze[self.row][self.col = 'H'
+
+        return target
     def go_down(self):
-        pass
+        new_row = self.row + 1
+        new_col = self.col 
+
+        if new_row >= len(self.maze):
+            return '*'
+
+        target = self.maze[new_row][new_col]
+
+        if target == '*'
+            return '*'
+
+        self.maze[self.row][self.col] = ''
+        self.row = new_row
+        self.col = new_col 
+        self.maze[self.row][self.col] = 'H'
     def go_left(self):
-        pass
+        new_row = self.row
+        new_col = self.col - 1
+
+        if new_col < 0:
+            return '*'
+
+        target = self.maze[new_row][new_col]
+
+        if target == '*'
+            return '*'
+
+        self.maze[self.row][self.col] = ''
+        self.row = new_row
+        self.col = new_col
+        self.maze[self.row][self.col] = 'H'
+
+        return target
     def go_right(self):
-        pass
+        new_row = self.row
+        new_col = self.col + 1
+
+        if new_col >= len(self.maze[new_row]):
+            return '*'
+
+        target = self.maze[new_row][new_col]
+
+        if target == '*':
+            return '*'
+
+        self.maze[self.row][self.col] = ''
+        self.row = new_row
+        self.col = new_col
+        self.maze[self.row][self.col] = 'H'
+
+        return target
         
