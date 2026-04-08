@@ -9,87 +9,68 @@ import maze
 class Hero():
     
     def __init__(self):
-        self.maze = Maze()
+        self.new_maze = maze.Maze()
 
         #Finding the starting position 's'
-        start = self.maze.search_maze('s')
-        self.row = start[0]
-        self.col = start[1]
+        start = self.new_maze.search_maze('s')
+        self.pos = start
         
         #placing the hero
-        self.maze[self.row][self.col] = 'H'
+        self.new_maze.maze[self.pos[0]][self.pos[1]] = 'H'
         
     
     
     def go_up(self):
-        new_row = self.row - 1
-        new_col = self.col
+        new_row = self.pos[0] - 1
+        new_col = self.pos[1] 
 
-        #Find bounds
-        if new_row < 0:
+        current_obj = self.new_maze[new_row][new_col]
+        if current_obj == '*':
             return '*'
+        else:
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = ' '
+            self.pos = [new_row, new_col]
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = 'H'
+            return current_obj
 
-        target = self.maze[new_row][new_col]
-
-        if target == '*':
-            return '*'
-        #Moves Hero
-        self.maze[self.row][self.col] = ''
-        self.row = new_row
-        self.col = new_col
-        self.maze[self.row][self.col = 'H'
-
-        return target
+    
     def go_down(self):
-        new_row = self.row + 1
-        new_col = self.col 
+        new_row = self.pos[0] + 1
+        new_col = self.pos[1] 
 
-        if new_row >= len(self.maze):
+        current_obj = self.new_maze[new_row][new_col]
+        if current_obj == '*':
             return '*'
+        else:
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = ' '
+            self.pos = [new_row, new_col]
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = 'H'
+            return current_obj
 
-        target = self.maze[new_row][new_col]
-
-        if target == '*'
-            return '*'
-
-        self.maze[self.row][self.col] = ''
-        self.row = new_row
-        self.col = new_col 
-        self.maze[self.row][self.col] = 'H'
     def go_left(self):
-        new_row = self.row
-        new_col = self.col - 1
+        new_row = self.pos[0] 
+        new_col = self.pos[1] - 1
 
-        if new_col < 0:
+        current_obj = self.new_maze[new_row][new_col]
+        if current_obj == '*':
             return '*'
-
-        target = self.maze[new_row][new_col]
-
-        if target == '*'
-            return '*'
-
-        self.maze[self.row][self.col] = ''
-        self.row = new_row
-        self.col = new_col
-        self.maze[self.row][self.col] = 'H'
-
-        return target
+        else:
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = ' '
+            self.pos = [new_row, new_col]
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = 'H'
+            return current_obj
+    
+    
     def go_right(self):
-        new_row = self.row
-        new_col = self.col + 1
 
-        if new_col >= len(self.maze[new_row]):
+        new_row = self.pos[0]
+        new_col = self.pos[1] + 1
+
+        current_obj = self.new_maze[new_row][new_col]
+        if current_obj == '*':
             return '*'
-
-        target = self.maze[new_row][new_col]
-
-        if target == '*':
-            return '*'
-
-        self.maze[self.row][self.col] = ''
-        self.row = new_row
-        self.col = new_col
-        self.maze[self.row][self.col] = 'H'
-
-        return target
-        
+        else:
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = ' '
+            self.pos = [new_row, new_col]
+            self.new_maze.maze[self.pos[0]][self.pos[1]] = 'H'
+            return current_obj
